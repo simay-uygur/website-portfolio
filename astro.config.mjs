@@ -7,9 +7,7 @@ const [owner = '', repo = ''] = repository.split('/');
 const isUserSite = repo.endsWith('.github.io');
 const base = repo && !isUserSite ? `/${repo}/` : '/';
 const site =
-  owner && repo
-    ? `https://${owner}.github.io${isUserSite ? '/' : base}`
-    : 'http://localhost:4321';
+  owner && repo ? `https://${owner}.github.io${isUserSite ? '/' : base}` : 'http://localhost:4321';
 
 export default defineConfig({
   site,

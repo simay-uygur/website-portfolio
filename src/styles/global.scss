@@ -168,25 +168,21 @@ body {
   }
 
   &-big__title {
-    font-size: 132px;
+    font-size: clamp(56px, 8vw, 132px);
     font-family: $title-font;
     font-weight: 700;
-    letter-spacing: -5px;
-    line-height: 1;
-    margin-bottom: 6px;
-
-    @media screen and (max-width: 1400px) {
-      font-size: 120px;
-    }
-
-    @media screen and (max-width: 1260px) {
-      font-size: 9vw;
-      letter-spacing: -2px;
-    }
+    letter-spacing: clamp(-5px, -0.25vw, -1px);
+    line-height: 0.92;
+    margin-bottom: 10px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 
     @media screen and (max-width: 560px) {
       font-size: 36px;
       margin-bottom: 12px;
+      line-height: 0.98;
+      letter-spacing: -1px;
     }
   }
 
@@ -213,17 +209,13 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
-  font-size: 72px;
+  font-size: clamp(36px, 4vw, 72px);
   text-align: center;
   letter-spacing: -3px;
   font-weight: lighter;
   font-family: $title-font;
   border-right: 1px solid $border-color;
   white-space: nowrap;
-
-  @media screen and (max-width: 1260px) {
-    font-size: 5vw;
-  }
 }
 
 .small-title {
@@ -247,10 +239,11 @@ body {
 
 .blog-article {
   h2 {
-    font-size: 26px;
+    font-size: clamp(22px, 2vw, 26px);
     font-weight: 500;
-    line-height: 1.2;
-    margin: 8px 0 8px;
+    line-height: 1.15;
+    margin: 12px 0 10px;
+    text-wrap: balance;
 
     span {
       font-family: $italic-font;
@@ -286,6 +279,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
   font-size: 14px;
 
   span {
@@ -370,23 +365,13 @@ marquee {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
   border-bottom: 1px solid $border-color;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  margin-top: 100px;
+  margin-top: clamp(48px, 6vw, 100px);
   letter-spacing: -1px;
-
-  @media screen and (max-width: 1400px) {
-    margin-top: 88px;
-  }
-
-  @media screen and (max-width: 1260px) {
-    margin-top: 6vw;
-  }
-
-  @media screen and (max-width: 1030px) {
-    margin-top: 5vw;
-  }
 }
 
 .blog-title-date {
@@ -396,16 +381,18 @@ marquee {
 }
 
 .blog-right-page {
-  font-size: 56px;
+  font-size: clamp(32px, 3vw, 56px);
   margin-bottom: 16px;
   font-family: $title-font;
 
   &-title {
     font-family: $title-font;
-    font-size: 28px;
+    font-size: clamp(22px, 2vw, 28px);
     font-weight: 600;
     max-width: 16ch;
     letter-spacing: -2px;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
   }
 
   &-subtitle {
@@ -650,10 +637,12 @@ html {
   &__brand {
     font-family: $title-font;
     font-weight: 700;
-    font-size: 22px;
+    font-size: clamp(18px, 1.6vw, 22px);
     letter-spacing: -1px;
     color: $title-color;
     text-decoration: none;
+    line-height: 1;
+    flex-shrink: 0;
 
     span {
       font-family: $italic-font;
@@ -665,6 +654,8 @@ html {
   nav {
     display: flex;
     gap: 28px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 
     a {
       color: $subtitle-color;
@@ -733,11 +724,13 @@ html {
 .page-title {
   font-family: $title-font;
   font-weight: 700;
-  font-size: clamp(40px, 7vw, 88px);
+  font-size: clamp(36px, 6vw, 88px);
   letter-spacing: -3px;
-  line-height: 1;
+  line-height: 0.95;
   margin: 0 0 18px;
   color: $title-color;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .page-deck {
