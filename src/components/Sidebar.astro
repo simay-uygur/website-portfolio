@@ -17,7 +17,7 @@ interface Props {
   seeAllHref?: string;
 }
 
-const { entries, heading = 'Featured Articles', seeAllHref = '#' } = Astro.props;
+const { entries, heading = 'Highlights', seeAllHref = '/work' } = Astro.props;
 
 const fmt = (d: Date) =>
   new Intl.DateTimeFormat('en-GB', {

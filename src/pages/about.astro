@@ -1,0 +1,32 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { siteConfig } from '../data/site';
+---
+
+<PageLayout
+  title="About Me"
+  eyebrow="Profile"
+  description={siteConfig.aboutIntro}
+>
+  <div class="prose">
+    {siteConfig.aboutParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+
+    <h2>What This Site Is For</h2>
+    <p>
+      Use this space to present the work you want people to remember: your strongest projects,
+      writing, collaborations, and the technical decisions behind them.
+    </p>
+
+    <h2>Focus Areas</h2>
+    <ul>
+      {siteConfig.strengths.map((item) => <li>{item}</li>)}
+    </ul>
+
+    <h2>Quick Facts</h2>
+    <ul>
+      <li><strong>Name:</strong> {siteConfig.name}</li>
+      <li><strong>Role:</strong> {siteConfig.role}</li>
+      <li><strong>Location:</strong> {siteConfig.location}</li>
+    </ul>
+  </div>
+</PageLayout>

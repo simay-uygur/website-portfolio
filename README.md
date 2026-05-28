@@ -79,6 +79,7 @@ See [STYLEGUIDE.md](STYLEGUIDE.md) for the template's design system and editing 
 - Update metadata and layout text in `src/layouts/` and `src/pages/`.
 - Replace images in `public/` with your own assets.
 - Keep `.github/workflows/ci.yml` for checks and `.github/workflows/deploy.yml` for publishing.
+- Update the personal profile values in `src/data/site.ts`.
 
 ## License
 

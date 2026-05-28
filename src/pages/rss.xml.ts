@@ -1,6 +1,7 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import type { APIContext } from 'astro';
+import { siteConfig } from '../data/site';
 
 export async function GET(context: APIContext) {
   const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
@@ -8,9 +9,9 @@ export async function GET(context: APIContext) {
   );
 
   return rss({
-    title: 'Self Esteem',
-    description: 'A magazine on attention, motivation, and the inner life.',
-    site: context.site ?? 'https://example.com',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    site: context.site ?? 'http://localhost:4321',
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,

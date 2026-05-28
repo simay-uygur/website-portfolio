@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
+import { siteConfig } from '../../data/site';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
@@ -29,7 +30,7 @@ const fmt = (d: Date) =>
   description={post.data.excerpt}
   eyebrow={post.data.pageNumber ?? 'Essay'}
   heroImage={post.data.cover}
-  pageTitle={`${post.data.title} — Self Esteem`}
+  pageTitle={`${post.data.title} — ${siteConfig.name}`}
 >
   <div class="post-meta">
     <span>{post.data.author}</span>

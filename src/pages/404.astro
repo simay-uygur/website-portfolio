@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
 ---
 
-<BaseLayout title="Lost — Self Esteem" description="The page you were looking for isn't here.">
+<BaseLayout title={`Not Found — ${siteConfig.name}`} description="The page you were looking for isn't here.">
   <div class="not-found">
     <div class="not-found__code">404</div>
-    <div class="not-found__title">This page got quiet.</div>
-    <a href="/">← Back to the cover</a>
+    <div class="not-found__title">This page does not exist.</div>
+    <a href="/">← Back to the homepage</a>
   </div>
 </BaseLayout>

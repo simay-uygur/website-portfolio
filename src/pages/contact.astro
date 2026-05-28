@@ -1,33 +1,27 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { siteConfig } from '../data/site';
 ---
 
 <PageLayout
   title="Contact"
   eyebrow="Say hello"
-  description="Letters, pitches, and corrections all welcome. We read everything."
+  description="The simplest version is best on GitHub Pages: direct links, email, and a clear way to reach you."
 >
   <div class="prose">
     <p>
-      Email us at <a href="mailto:hello@example.com">hello@example.com</a>, or use the form below.
-      Replace the form action with your own endpoint (Formspree, Netlify Forms, etc.) before
-      deploying.
+      Email me at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>. You can also find
+      me on <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub</a> and
+      <a href={siteConfig.linkedin} target="_blank" rel="noreferrer"> LinkedIn</a>.
     </p>
+    <p>
+      If you want a contact form later, connect this page to Formspree or another form backend.
+      For now, direct contact is more reliable than a static mail form.
+    </p>
+    <ul>
+      <li><strong>Role:</strong> {siteConfig.role}</li>
+      <li><strong>Location:</strong> {siteConfig.location}</li>
+      <li><strong>Email:</strong> <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+    </ul>
   </div>
-
-  <form class="contact-form" action="mailto:hello@example.com" method="post" enctype="text/plain">
-    <label>
-      Name
-      <input type="text" name="name" required />
-    </label>
-    <label>
-      Email
-      <input type="email" name="email" required />
-    </label>
-    <label>
-      Message
-      <textarea name="message" required></textarea>
-    </label>
-    <button type="submit">Send</button>
-  </form>
 </PageLayout>

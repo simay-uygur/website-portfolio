@@ -15,5 +15,8 @@ export default defineConfig({
   site,
   base,
   trailingSlash: 'ignore',
+  redirects: {
+    '/studio': '/about',
+  },
   integrations: [mdx(), sitemap()],
 });
