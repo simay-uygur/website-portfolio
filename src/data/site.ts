@@ -2,8 +2,7 @@ export const siteConfig = {
   name: 'Simay Uygur',
   shortName: 'Simay',
   title: 'Simay Uygur | Portfolio',
-  description:
-    'Portfolio, selected work, writing, and experiments by Simay Uygur.',
+  description: 'Portfolio, selected work, writing, and experiments by Simay Uygur.',
   email: 'simayuygur09@gmail.com',
   github: 'https://github.com/simay-uygur',
   linkedin: 'https://www.linkedin.com/in/simay-uygur/',
