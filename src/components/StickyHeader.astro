@@ -3,14 +3,15 @@ interface Props {
   title: string;
   pinnedLabel?: string;
   pageNumber?: string;
+  brand?: boolean;
 }
 
-const { title, pinnedLabel = 'Selected Work', pageNumber = 'NO. 01' } = Astro.props;
+const { title, pinnedLabel = 'Selected Work', pageNumber = 'NO. 01', brand = false } = Astro.props;
 ---
 
 <div class="blog-header blog-is-sticky">
   <div class="blog-article header-article">
-    <div class="blog-big__title">{title}</div>
+    <div class:list={['blog-big__title', brand && 'blog-big__title--brand']}>{title}</div>
     <div class="blog-menu rounded small-title">{pinnedLabel}</div>
   </div>
   <div class="blog-article page-number">

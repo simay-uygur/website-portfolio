@@ -18,9 +18,10 @@ posts.sort((a, b) => +b.data.date - +a.data.date);
   <div class="blog">
     <Menu />
     <StickyHeader
-      title={siteConfig.shortName}
+      title={siteConfig.homeBrand}
       pinnedLabel={siteConfig.homeLabel}
       pageNumber={pinned?.data.pageNumber ?? 'NO. 01'}
+      brand={true}
     />
 
     <div class="blog-header-container">

@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: 'Simay Uygur',
   shortName: 'Simay',
+  homeBrand: 'Simay',
   title: 'Simay Uygur | Portfolio',
   description: 'Portfolio, selected work, writing, and experiments by Simay Uygur.',
   email: 'simayuygur09@gmail.com',
