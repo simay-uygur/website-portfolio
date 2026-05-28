@@ -6,7 +6,7 @@ import { siteConfig } from '../data/site';
 <PageLayout
   title="Contact"
   eyebrow="Say hello"
-  description="The simplest version is best on GitHub Pages: direct links, email, and a clear way to reach you."
+  description="A straightforward contact page is usually enough for a portfolio: one reliable email address, your public profiles, and a short note about what people can reach out for."
 >
   <div class="prose">
     <p>
@@ -15,13 +15,27 @@ import { siteConfig } from '../data/site';
       <a href={siteConfig.linkedin} target="_blank" rel="noreferrer"> LinkedIn</a>.
     </p>
     <p>
-      If you want a contact form later, connect this page to Formspree or another form backend. For
-      now, direct contact is more reliable than a static mail form.
+      I am using this site to present projects, coursework, and technical writing. If you want to
+      talk about internships, junior developer roles, collaborations, or a specific project, email
+      is the best way to reach me.
     </p>
+
     <ul>
       <li><strong>Role:</strong> {siteConfig.role}</li>
       <li><strong>Location:</strong> {siteConfig.location}</li>
       <li><strong>Email:</strong> <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+      <li>
+        <strong>GitHub:</strong>{' '}
+        <a href={siteConfig.github} target="_blank" rel="noreferrer">
+          {siteConfig.github.replace('https://', '')}
+        </a>
+      </li>
+      <li>
+        <strong>LinkedIn:</strong>{' '}
+        <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">
+          {siteConfig.linkedin.replace('https://www.', '')}
+        </a>
+      </li>
     </ul>
   </div>
 </PageLayout>

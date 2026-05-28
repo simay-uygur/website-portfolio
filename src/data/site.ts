@@ -7,7 +7,7 @@ export const siteConfig = {
   email: 'simayuygur09@gmail.com',
   github: 'https://github.com/simay-uygur',
   linkedin: 'https://www.linkedin.com/in/simay-uygur/',
-  location: 'Istanbul, Turkiye',
+  location: 'Ankara, Turkey (Turkiye) ',
   role: 'Developer, student, and builder of web projects',
   homeLabel: 'Selected Work',
   journalLabel: 'Writing',
