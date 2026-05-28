@@ -1,94 +1,84 @@
-# Self Esteem (Astro Template)
+# Portfolio Website
 
-![Magazine cover homepage](public/hero.jpeg)
+This repository uses an Astro template as the base and is configured to deploy to GitHub Pages through GitHub Actions.
 
-[![Live preview](https://img.shields.io/badge/▶_Live_preview-121418?style=for-the-badge&labelColor=121418&color=e9e6e4)](https://miro.build/templates/self-esteem)
+## Local Run Commands
 
-A magazine-style editorial template built with [Astro](https://astro.build). Original layout by [Aysenur Turk](https://codepen.io/TurkAysenur/pen/gOmMgpx), re-implemented here as a full project.
-
-## Quick start
-
-Scaffold a new project from this template:
+Install dependencies:
 
 ```bash
-# npm
-npm create astro@latest -- --template m-durana/self-esteem-astro
-
-# pnpm
-pnpm create astro@latest --template m-durana/self-esteem-astro
-
-# yarn
-yarn create astro --template m-durana/self-esteem-astro
-
-# bun
-bun create astro@latest --template m-durana/self-esteem-astro
-```
-
-Or use the "Use template" button in the top right or clone directly:
-
-```bash
-git clone https://github.com/m-durana/self-esteem-astro.git
-cd self-esteem-astro
 npm install
 ```
 
-Then:
+Start the local dev server:
 
 ```bash
-npm run dev      # http://localhost:4321
-npm run build    # static output to ./dist
+npm run dev
 ```
 
-## Features
+Open the local site:
 
-- Full-viewport magazine homepage (`/`)
-- `/blog` index + `/blog/[slug]` MDX post pages with prev/next
-- `/tags/[tag]` pages generated from post frontmatter
-- `/studio`, `/contact`, `/work` (data-driven), `/404`
-- RSS at `/rss.xml`, OG/Twitter meta in `BaseLayout`
-- `PageLayout` + `_template.astro.example` for creating new pages
+```text
+http://localhost:4321
+```
 
-## Structure
+Build the production version locally:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Deployment
+
+Push to `main` and GitHub Actions will build and deploy the site to GitHub Pages.
+
+If your repository is named `yourname.github.io`, the site will deploy at:
+
+```text
+https://yourname.github.io/
+```
+
+If your repository is a project repository such as `website-portfolio`, the site will usually deploy at:
+
+```text
+https://yourname.github.io/website-portfolio/
+```
+
+## GitHub Pages Settings
+
+In the GitHub repository settings:
+
+1. Go to `Settings` -> `Pages`.
+2. Set `Source` to `GitHub Actions`.
+
+## Template Notes
+
+This project keeps the template's content structure and page system. The main content lives in:
 
 ```
 src/
-├── components/      Menu, Footer, FeaturedArticle, Sidebar, Marquee, Circle, StickyHeader
-├── content/         posts/ (md+mdx), featured/, work/
+├── components/
+├── content/
 ├── content.config.ts
-├── layouts/         BaseLayout, PageLayout
-├── pages/           index, blog/, tags/, studio, contact, work, 404, rss.xml
+├── layouts/
+├── pages/
 └── styles/global.scss
 ```
 
-See [STYLEGUIDE.md](STYLEGUIDE.md) for tokens, type scale, and a guide for staying on-brand.
+See [STYLEGUIDE.md](STYLEGUIDE.md) for the template's design system and editing guidance.
 
-## Authoring a post
+## Next Adjustments
 
-Drop a `.md` or `.mdx` file in `src/content/posts/`:
-
-```md
----
-title: 'Your Article Title'
-bigTitle: 'Hero'
-emphasis: 'Word' # optional, italicised inside the headline
-headline: 'Sharing The {emphasis} Acclaim About Motivation'
-excerpt: 'Teaser shown on the cover and in /blog.'
-author: 'Jane Doe'
-date: 2026-01-01
-cover: 'https://images.unsplash.com/...'
-tags: ['attention', 'quiet']
-featured: true # appear on the magazine cover
-pageNumber: 'NO. 01' # optional, used by the sticky header
----
-
-Long-form body.
-```
-
-Sidebar entries (`src/content/featured/`) and portfolio items (`src/content/work/`) use smaller schemas; see `content.config.ts`.
-
-## Adding a subpage
-
-Copy `src/pages/_template.astro.example` to `src/pages/<name>.astro`, edit the props, add a link in `src/components/Menu.astro` if it should appear in nav.
+- Replace the template content in `src/content/` with your own projects, writing, and profile details.
+- Update metadata and layout text in `src/layouts/` and `src/pages/`.
+- Replace images in `public/` with your own assets.
+- Keep `.github/workflows/ci.yml` for checks and `.github/workflows/deploy.yml` for publishing.
 
 ## License
 
