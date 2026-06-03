@@ -1005,11 +1005,72 @@ html {
 .post-meta {
   display: flex;
   gap: 18px;
+  flex-wrap: wrap;
   font-size: 14px;
   font-family: $italic-font;
   font-style: italic;
   color: $subtitle-color;
   margin-top: 18px;
+}
+
+.project-meta {
+  margin-top: 24px;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  padding: 18px 0;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    align-items: start;
+    font-size: 15px;
+
+    strong {
+      font-family: $title-font;
+      font-size: 14px;
+      letter-spacing: -0.2px;
+      color: $title-color;
+    }
+  }
+
+  &__row + &__row {
+    margin-top: 12px;
+  }
+
+  @media screen and (max-width: 560px) {
+    &__row {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+  }
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border: 1px solid $border-color;
+    text-decoration: none;
+    color: $title-color;
+    font-family: $title-font;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+
+    &:hover {
+      background: $body-bg;
+      color: $blog-bg;
+      border-color: $body-bg;
+    }
+  }
 }
 
 .post-nav {

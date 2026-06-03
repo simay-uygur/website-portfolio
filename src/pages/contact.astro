@@ -6,18 +6,17 @@ import { siteConfig } from '../data/site';
 <PageLayout
   title="Contact"
   eyebrow="Say hello"
-  description="A straightforward contact page is usually enough for a portfolio: one reliable email address, your public profiles, and a short note about what people can reach out for."
+  description="The best way to reach me is by email. You can also use my GitHub, LinkedIn, and CV links below."
 >
   <div class="prose">
     <p>
-      Email me at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>. You can also find
-      me on <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub</a> and
-      <a href={siteConfig.linkedin} target="_blank" rel="noreferrer"> LinkedIn</a>.
+      If you want to talk about internships, junior developer roles, collaborations, or a specific
+      project, email is the best way to reach me.
     </p>
     <p>
-      I am using this site to present projects, coursework, and technical writing. If you want to
-      talk about internships, junior developer roles, collaborations, or a specific project, email
-      is the best way to reach me.
+      This site collects my projects, coursework, technical writing, and portfolio material. If you
+      want a quick overview before reaching out, you can also open my
+      <a href={siteConfig.cvHref} target="_blank" rel="noreferrer"> CV</a>.
     </p>
 
     <ul>
@@ -34,6 +33,12 @@ import { siteConfig } from '../data/site';
         <strong>LinkedIn:</strong>{' '}
         <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">
           {siteConfig.linkedin.replace('https://www.', '')}
+        </a>
+      </li>
+      <li>
+        <strong>CV:</strong>{' '}
+        <a href={siteConfig.cvHref} target="_blank" rel="noreferrer">
+          {siteConfig.cvLabel}
         </a>
       </li>
     </ul>

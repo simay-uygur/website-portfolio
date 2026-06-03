@@ -10,6 +10,14 @@ const posts = defineCollection({
     headline: z.string(),
     excerpt: z.string(),
     author: z.string(),
+    course: z.string(),
+    context: z.string().optional(),
+    repoUrl: z.string().url(),
+    demoUrl: z.string().url().optional(),
+    postType: z
+      .enum(['homework', 'course-project', 'personal-project'])
+      .default('personal-project'),
+    status: z.string().optional(),
     readTime: z.string().default('5 Min Read'),
     date: z.coerce.date(),
     cover: z.string().url(),
@@ -37,7 +45,7 @@ const work = defineCollection({
     year: z.string(),
     cover: z.string().url(),
     summary: z.string(),
-    url: z.string().url().optional(),
+    postSlug: z.string(),
     order: z.number().default(0),
   }),
 });

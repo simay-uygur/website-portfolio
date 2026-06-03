@@ -2,6 +2,29 @@
 
 This repository uses an Astro template as the base and is configured to deploy to GitHub Pages through GitHub Actions.
 
+## Node.js Requirement
+
+Astro 6 in this project requires Node.js `22.12.0` or newer. The repository pins that version in both `.nvmrc` and `.node-version`.
+
+If your shell is still on Node `20.17.0`, switch before installing dependencies or running a build:
+
+```bash
+nvm install 22.12.0
+nvm use 22.12.0
+```
+
+Confirm the active version:
+
+```bash
+node -v
+```
+
+Expected output:
+
+```text
+v22.12.0
+```
+
 ## Local Run Commands
 
 Install dependencies:

@@ -13,8 +13,19 @@ const year = new Date().getFullYear();
       <a href="/work">Work</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
+      <a href={siteConfig.cvHref} target="_blank" rel="noreferrer">
+        {siteConfig.cvLabel}
+      </a>
       <a href="/rss.xml">RSS</a>
     </nav>
-    <div class="site-footer__meta">© {year} {siteConfig.name}. Built with Astro.</div>
+    <div class="site-footer__meta">
+      <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+      <span>·</span>
+      <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub</a>
+      <span>·</span>
+      <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+      <span>·</span>
+      <span>© {year} {siteConfig.name}</span>
+    </div>
   </div>
 </footer>

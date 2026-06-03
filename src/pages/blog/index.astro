@@ -17,8 +17,8 @@ const renderHeadline = (headline: string, emphasis?: string) => {
 
 <PageLayout
   title="Writing"
-  eyebrow="Journal"
-  description="Notes, essays, and process writing that sit alongside the portfolio."
+  eyebrow="Case Studies"
+  description="Detailed write-ups for projects, coursework, and technical experiments, with implementation notes and GitHub links."
 >
   <div class="post-list">
     {
@@ -31,7 +31,7 @@ const renderHeadline = (headline: string, emphasis?: string) => {
             </div>
             <div>
               <div class="post-card__meta">
-                {fmt(post.data.date)} · {post.data.author} · {post.data.readTime}
+                {fmt(post.data.date)} · {post.data.course} · {post.data.readTime}
               </div>
               <h2 class="post-card__title">
                 {parts.map((part, i) => (i % 2 === 1 ? <span>{part}</span> : <>{part}</>))}

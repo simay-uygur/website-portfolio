@@ -28,14 +28,48 @@ const fmt = (d: Date) =>
 <PageLayout
   title={post.data.bigTitle}
   description={post.data.excerpt}
-  eyebrow={post.data.pageNumber ?? 'Essay'}
+  eyebrow={post.data.course}
   heroImage={post.data.cover}
   pageTitle={`${post.data.title} — ${siteConfig.name}`}
 >
   <div class="post-meta">
-    <span>{post.data.author}</span>
+    <span>{post.data.postType}</span>
     <span>{fmt(post.data.date)}</span>
     <span>{post.data.readTime}</span>
+  </div>
+
+  <div class="project-meta">
+    <div class="project-meta__row">
+      <strong>Course</strong>
+      <span>{post.data.course}</span>
+    </div>
+    {
+      post.data.context && (
+        <div class="project-meta__row">
+          <strong>Context</strong>
+          <span>{post.data.context}</span>
+        </div>
+      )
+    }
+    {
+      post.data.status && (
+        <div class="project-meta__row">
+          <strong>Status</strong>
+          <span>{post.data.status}</span>
+        </div>
+      )
+    }
+  </div>
+
+  <div class="project-actions">
+    <a href={post.data.repoUrl} target="_blank" rel="noreferrer"> View GitHub Repository </a>
+    {
+      post.data.demoUrl && (
+        <a href={post.data.demoUrl} target="_blank" rel="noreferrer">
+          Open Live Demo
+        </a>
+      )
+    }
   </div>
 
   {
@@ -54,7 +88,7 @@ const fmt = (d: Date) =>
     <Content />
   </div>
 
-  <nav class="post-nav" aria-label="Adjacent essays">
+  <nav class="post-nav" aria-label="Adjacent case studies">
     {
       prev ? (
         <a class="post-nav__prev" href={`/blog/${prev.id}`}>
