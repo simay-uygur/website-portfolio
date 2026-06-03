@@ -1,17 +1,41 @@
 ---
 interface Props {
-  items?: string[];
+  items?: {
+    text: string;
+    href?: string;
+  }[];
 }
 
 const {
   items = [
-    'Now And Then You Miss It Sounds Make You Cry',
-    'Now In - MoMa Sharing Exhibition NOW',
-    'NYC Opens After Long Lockdown Check',
+    {
+      text: 'Self Aware by Temper City',
+      href: 'https://www.youtube.com/results?search_query=Temper+City+Self+Aware',
+    },
+    {
+      text: 'Love Me by JMSN',
+      href: 'https://www.youtube.com/results?search_query=JMSN+Love+Me',
+    },
+    {
+      text: 'Tolerance by Asal',
+      href: 'https://www.youtube.com/results?search_query=Asal+Tolerance',
+    },
   ],
 } = Astro.props;
 ---
 
 <marquee width="100%" direction="left">
-  {items.map((text) => <span>{text}</span>)}
+  {
+    items.map((item) => (
+      <span>
+        {item.href ? (
+          <a href={item.href} target="_blank" rel="noreferrer">
+            {item.text}
+          </a>
+        ) : (
+          item.text
+        )}
+      </span>
+    ))
+  }
 </marquee>
