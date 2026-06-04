@@ -1,3 +1,5 @@
+import { withBase } from '../utils/paths';
+
 export const siteConfig = {
   name: 'Simay Uygur',
   shortName: 'Simay',
@@ -8,7 +10,7 @@ export const siteConfig = {
   github: 'https://github.com/simay-uygur',
   linkedin: 'https://www.linkedin.com/in/simay-uygur/',
   cvLabel: 'CV',
-  cvHref: '/files/simaycv.pdf',
+  cvHref: withBase('/files/simaycv.pdf'),
   location: 'Ankara, Turkey (Turkiye)',
   role: 'Backend-focused developer exploring machine learning and selective frontend work',
   homeLabel: 'Selected Work',
@@ -70,10 +72,10 @@ export const siteConfig = {
     },
   ],
   navItems: [
-    { label: 'Work', href: '/work' },
-    { label: 'About', href: '/about' },
-    { label: 'Writing', href: '/blog' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'CV', href: '/files/simaycv.pdf', external: true },
+    { label: 'Work', href: withBase('/work') },
+    { label: 'About', href: withBase('/about') },
+    { label: 'Writing', href: withBase('/blog') },
+    { label: 'Contact', href: withBase('/contact') },
+    { label: 'CV', href: withBase('/files/simaycv.pdf'), external: true },
   ],
 } as const;

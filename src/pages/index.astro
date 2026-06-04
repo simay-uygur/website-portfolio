@@ -6,6 +6,7 @@ import StickyHeader from '../components/StickyHeader.astro';
 import FeaturedArticle from '../components/FeaturedArticle.astro';
 import Sidebar from '../components/Sidebar.astro';
 import { siteConfig } from '../data/site';
+import { withBase } from '../utils/paths';
 
 const posts = await getCollection('posts', ({ data }) => data.featured);
 const featured = await getCollection('featured');
@@ -36,12 +37,12 @@ posts.sort((a, b) => +b.data.date - +a.data.date);
             author={post.data.author}
             readTime={post.data.readTime}
             excerpt={post.data.excerpt}
-            href={`/blog/${post.id}`}
+            href={withBase(`/blog/${post.id}`)}
           />
         ))
       }
     </div>
 
-    <Sidebar entries={featured} heading="Highlights" seeAllHref="/work" />
+    <Sidebar entries={featured} heading="Highlights" seeAllHref={withBase('/work')} />
   </div>
 </BaseLayout>

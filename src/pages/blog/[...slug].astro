@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
 import { siteConfig } from '../../data/site';
+import { withBase } from '../../utils/paths';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
@@ -76,7 +77,7 @@ const fmt = (d: Date) =>
     post.data.tags.length > 0 && (
       <div class="tag-list" style="margin-top: 24px;">
         {post.data.tags.map((tag) => (
-          <a href={`/tags/${tag}`}>{tag}</a>
+          <a href={withBase(`/tags/${tag}`)}>{tag}</a>
         ))}
       </div>
     )
@@ -91,7 +92,7 @@ const fmt = (d: Date) =>
   <nav class="post-nav" aria-label="Adjacent case studies">
     {
       prev ? (
-        <a class="post-nav__prev" href={`/blog/${prev.id}`}>
+        <a class="post-nav__prev" href={withBase(`/blog/${prev.id}`)}>
           <span>← Previous</span>
           <strong>{prev.data.bigTitle}</strong>
         </a>
@@ -101,7 +102,7 @@ const fmt = (d: Date) =>
     }
     {
       next ? (
-        <a class="post-nav__next" href={`/blog/${next.id}`}>
+        <a class="post-nav__next" href={withBase(`/blog/${next.id}`)}>
           <span>Next →</span>
           <strong>{next.data.bigTitle}</strong>
         </a>

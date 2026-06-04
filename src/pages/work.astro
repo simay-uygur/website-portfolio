@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
+import { withBase } from '../utils/paths';
 
 const items = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 ---
@@ -20,7 +21,7 @@ const items = (await getCollection('work')).sort((a, b) => a.data.order - b.data
     ) : (
       <div class="work-grid">
         {items.map((item) => (
-          <a class="work-item" href={`/blog/${item.data.postSlug}`}>
+          <a class="work-item" href={withBase(`/blog/${item.data.postSlug}`)}>
             <img src={item.data.cover} alt="" loading="lazy" />
             <div class="work-item__year">{item.data.year}</div>
             <div class="work-item__title">{item.data.title}</div>

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
+import { withBase } from '../../utils/paths';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
@@ -28,11 +29,11 @@ const fmt = (d: Date) =>
   eyebrow="Tag"
   description={`${posts.length} case stud${posts.length === 1 ? 'y' : 'ies'} tagged ${tag}.`}
 >
-  <p><a href="/blog">← All case studies</a></p>
+  <p><a href={withBase('/blog')}>← All case studies</a></p>
   <div class="post-list">
     {
       posts.map((post) => (
-        <a class="post-card" href={`/blog/${post.id}`}>
+        <a class="post-card" href={withBase(`/blog/${post.id}`)}>
           <div class="post-card__cover">
             <img src={post.data.cover} alt="" loading="lazy" />
           </div>

@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../data/site';
+import { withBase } from '../utils/paths';
 
 interface Props {
   title?: string;
@@ -20,10 +21,15 @@ const ogImage = image ? new URL(image, Astro.site ?? Astro.url).toString() : und
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" type="application/rss+xml" title={siteConfig.name} href="/rss.xml" />
-    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={siteConfig.name}
+      href={withBase('/rss.xml')}
+    />
+    <link rel="sitemap" type="application/xml" href={withBase('/sitemap-index.xml')} />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
