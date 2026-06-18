@@ -19,7 +19,9 @@ const headTitle = pageTitle ?? `${title} — ${siteConfig.name}`;
 <BaseLayout title={headTitle} description={description} image={heroImage}>
   <div class="page">
     <header class="page-nav">
-      <a class="page-nav__brand" href={withBase('/')}>{siteConfig.shortName} <span>Portfolio</span></a>
+      <a class="page-nav__brand" href={withBase('/')}
+        >{siteConfig.shortName} <span>Portfolio</span></a
+      >
       <nav aria-label="Primary">
         {
           siteConfig.navItems.map((item) => (
